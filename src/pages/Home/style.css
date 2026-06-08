@@ -1,0 +1,294 @@
+:root{
+    --main-color: #c09567;
+    --black: #000000;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    --white: #fff;
+    --cerberoBg: #10326b;
+    --cerberoAlt: #466baa;
+    font-size: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: none;
+    transition: 0.2s linear;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    background: var(--cerberoBg);
+}
+
+section{
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    border-bottom: var(--border);
+    background: var(--cerberoBg);
+}
+
+.header section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.navbar a{
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.navbar a:hover{
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.icons img{
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.icons img:hover{
+    width: 40px;
+    height: 40px;
+}
+
+.logo img{
+    width: 70px;
+    height: 70px;
+}
+
+.btn{
+    background: var(--main-color);
+    color: var(--white);
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.btn:hover{
+    letter-spacing: 0.1rem;
+}
+
+.home-container{
+    min-height: 100vh;
+    background: linear-gradient(to bottom, transparent 80%, var(--cerberoBg) 100%), url(/using-PC.png) no-repeat;
+    padding-top: 13rem;
+    background-position: center;
+    background-size: cover;
+}
+
+.home-container section{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content{
+    max-width: 60rem;
+}
+
+.content h3{
+    color: var(--white);
+    font-size: 6rem;
+}
+
+.content p{
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.tittle{
+    font-size: 4rem;
+    color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+.tittle span{
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    background: var(--black);
+    gap: 1.5rem;
+}
+
+.about .row .content{
+    padding: 2rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color: var(--white);
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.container-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.box .image img{
+    width: 30rem;
+}
+
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.courses .box-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.courses .box-container .box{
+    text-align: center;
+    border: var(--border);
+    padding: 5rem;
+    cursor: pointer;
+}
+
+.courses .box-container .box:hover{
+    background: var(--cerberoAlt);
+}
+
+.courses .box-container .box:hover>*{
+    color: var(--black);
+}
+
+.courses .box-container .box h3{
+    font-size: 2rem;
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+.courses .box-container .price{
+    font-size: 2.5rem;
+    color: var(--white);
+    padding: 0.5rem 0;
+}
+
+.courses .box-container .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.reviews .box-container .box{
+    border: var(--border);
+    text-align: center;
+    padding: 2rem 3rem;
+}
+
+.reviews .box-container .box p{
+    font-size: 1.5rem;
+    color: var(--white);
+    padding: 2rem 0;
+    line-height: 1.8;
+    font-weight: lighter;
+}
+
+.reviews .box-container .box h3{
+    font-size: 1.8rem;
+    color: var(--white);
+    margin: 1rem 0;
+}
+
+.reviews .box-container .box .user{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+}
+
+.consultation .box-container .box{
+    text-align: center;
+    padding: 2rem 3rem;
+}
+
+.consultation .box-container .box h3{
+    font-size: 2rem;
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer .share{
+    padding: 1rem 0;
+}
+
+.footer .share img{
+    margin: 0.3em;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+.footer .share img:hover{
+    background: var(--main-color);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-name {
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
+.btn-logout{
+    background: none;
+    border: 0.1rem solid var(--main-color);
+    color: var(--main-color);
+    padding: 0.6rem 1.6rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.2s linear;
+    margin-left: 3rem;
+}
+
+.btn-logout:hover {
+    background: var(--main-color);
+    color: var(--white);
+}

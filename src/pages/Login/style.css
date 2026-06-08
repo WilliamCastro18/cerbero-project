@@ -1,0 +1,410 @@
+:root {
+    --bg-dark: #1d386a;
+    --bg-panel: #142a50;
+    --gold: #c09567;
+    --gold-light: #d4aa80;
+    --gold-dark: #a07848;
+    --white: #ffffff;
+    --white-muted: rgba(255, 255, 255, 0.55);
+    --white-faint: rgba(255, 255, 255, 0.08);
+    --border: rgba(192, 149, 103, 0.25);
+}
+
+.login-page,
+.login-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-page {
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    display: flex;
+    background: var(--bg-dark);
+    overflow: hidden;
+}
+
+/* Subtle background texture */
+.login-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(192, 149, 103, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(29, 56, 106, 0.8) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* ─── Card wrapper ─── */
+.card {
+    display: flex;
+    width: 100%;
+    min-height: 520px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(192, 149, 103, 0.15);
+    animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── Left panel ─── */
+.panel-left {
+    flex: 1.1;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 40px;
+    position: relative;
+    border-right: 1px solid var(--border);
+}
+
+/* Diagonal golden accent strip */
+.panel-left::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+    opacity: 0.6;
+}
+
+.brand-logo {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 4px 24px rgba(192, 149, 103, 0.35));
+    animation: fadeUp 0.7s 0.1s ease both;
+}
+
+.brand-name {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--white);
+    text-transform: uppercase;
+    animation: fadeUp 0.7s 0.15s ease both;
+}
+
+.brand-tagline {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 6px;
+    animation: fadeUp 0.7s 0.2s ease both;
+}
+
+/* Decorative separator */
+.brand-sep {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 28px auto;
+    animation: fadeUp 0.7s 0.25s ease both;
+}
+
+.brand-copy {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--white-muted);
+    text-align: center;
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    max-width: 240px;
+    animation: fadeUp 0.7s 0.3s ease both;
+}
+
+/* Decorative circles */
+.deco-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(192, 149, 103, 0.1);
+}
+
+.deco-ring-1 {
+    width: 280px;
+    height: 280px;
+    bottom: -80px;
+    left: -80px;
+}
+
+.deco-ring-2 {
+    width: 160px;
+    height: 160px;
+    bottom: -30px;
+    left: -30px;
+    border-color: rgba(192, 149, 103, 0.15);
+}
+
+.deco-ring-3 {
+    width: 100px;
+    height: 100px;
+    top: 30px;
+    right: 40px;
+}
+
+/* ─── Right panel ─── */
+.panel-right {
+    flex: 1;
+    background: var(--bg-panel);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 52px 48px;
+    animation: fadeUp 0.7s 0.1s ease both;
+}
+
+.form-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.form-heading {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 36px;
+}
+
+/* Input group */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 48px;
+    background: var(--white-faint);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 0 44px 0 16px;
+    outline: none;
+    transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+}
+
+.input-group input::placeholder {
+    color: var(--white-muted);
+    font-size: 13px;
+}
+
+.input-group input:focus {
+    border-color: var(--gold);
+    background: rgba(192, 149, 103, 0.07);
+    box-shadow: 0 0 0 3px rgba(192, 149, 103, 0.1);
+}
+
+.input-group i {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    font-size: 20px;
+    color: var(--white-muted);
+    pointer-events: none;
+    transition: color 0.2s;
+}
+
+.input-group:focus-within i {
+    color: var(--gold);
+}
+
+/* Remember / forgot row */
+.extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0 28px;
+}
+
+.extras label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--white-muted);
+    cursor: pointer;
+    user-select: none;
+}
+
+.extras input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--white-faint);
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.extras input[type="checkbox"]:checked {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.extras input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: var(--bg-panel);
+    font-weight: 700;
+}
+
+.extras a {
+    font-size: 12px;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+}
+
+.extras a:hover {
+    color: var(--gold-light);
+    text-decoration: underline;
+}
+
+/* Submit button */
+.btn-login {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.25s;
+    box-shadow: 0 4px 20px rgba(192, 149, 103, 0.3);
+}
+
+.btn-login::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.btn-login:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 28px rgba(192, 149, 103, 0.45);
+}
+
+.btn-login:hover::before {
+    opacity: 1;
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+/* Register link */
+.register-link {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 12.5px;
+    color: var(--white-muted);
+    letter-spacing: 0.03em;
+}
+
+.register-link a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 4px;
+    transition: color 0.2s;
+}
+
+.register-link a:hover {
+    color: var(--gold-light);
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 780px) {
+    .card {
+        flex-direction: column;
+        width: 95vw;
+        min-height: auto;
+    }
+
+    .panel-left {
+        padding: 40px 32px 32px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .panel-left::after {
+        display: none;
+    }
+
+    .deco-ring {
+        display: none;
+    }
+}
+
+.btn-login:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
